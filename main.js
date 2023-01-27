@@ -1,3 +1,5 @@
+let color = 'black';
+
 document.addEventListener("DOMContentLoaded", function(){
     //declare variables
     userInput = 0;
@@ -30,9 +32,24 @@ function createSketchpad(int){
     
     for (let i=0; i<areaOfSketchpad; i++){
         let div = document.createElement("div");
-        div.addEventListener('mouseover', function(){
-            div.style.backgroundColor = 'black'
-        });
+        div.addEventListener('mouseover', colorDiv);
         sketchpad.insertAdjacentElement("beforeend", div );
     }   
-}   
+}
+
+function setColor(colorChoice){
+    color = colorChoice;
+}
+
+function colorDiv(){
+    if (color === 'rainbow') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else 
+    {this.style.backgroundColor = 'black'; }  
+}
+
+function clearSketchpad(){
+    let divs = document.querySelectorAll('div');
+    divs.forEach((div) => div.style.backgroundColor = 'white');
+    color = 'black';
+}
