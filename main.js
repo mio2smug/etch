@@ -30,7 +30,9 @@ function createSketchpad(int){
     
     for (let i=0; i<areaOfSketchpad; i++){
         let div = document.createElement("div");
-        div.style.backgroundColor = "white";
+        div.addEventListener('mouseover', function(){
+            div.style.backgroundColor = 'black'
+        });
         sketchpad.insertAdjacentElement("beforeend", div );
     }   
 }   

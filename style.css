@@ -6,11 +6,15 @@ body{
     justify-content: center;
     align-items: center;
 }
-.grid{
+.sketchpad{
     display: grid;
     width: 500px;
     height: 500px;
     border: 1px solid black;
     margin-bottom: 50px;
     border-radius: 5px;
+}
+
+.sketchpad-editor{
+    margin-bottom: 20px ;
 }
