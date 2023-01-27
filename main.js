@@ -1,7 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(){
+    //declare variables
+    userInput = 0;
+    const submitButton = document.querySelector('#submitButton'); 
     createSketchpad(16);
-    console.log("Hi");
+
+    submitButton.addEventListener('click', function(){
+        userInput = document.querySelector('#inputField').value;
+        console.log(userInput);
+        userInputValidation(userInput);
+    });            
+
+
 });
+
+function userInputValidation(userInput){
+    if (userInput >= 2 && userInput <= 100){
+        createSketchpad(userInput);
+    } return 0;
+}
 
 
 function createSketchpad(int){
@@ -16,6 +32,5 @@ function createSketchpad(int){
         let div = document.createElement("div");
         div.style.backgroundColor = "white";
         sketchpad.insertAdjacentElement("beforeend", div );
-    }
-    console.log(areaOfSketchpad);    
+    }   
 }   
